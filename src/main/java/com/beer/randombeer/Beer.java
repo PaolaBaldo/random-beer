@@ -15,6 +15,11 @@ public class Beer {
 	
 	
 	
+	
+	
+	public Beer() {
+	}
+
 	public Beer(String name, String description, double abv, String breweryLocation) {
 		super();
 		this.name = name;
