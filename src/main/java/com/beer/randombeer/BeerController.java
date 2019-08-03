@@ -46,13 +46,13 @@ public class BeerController {
 				//linkTo(methodOn(BeerController.class).all()).withRel("beers"));
 		}*/
 		
-		@CrossOrigin(origins = "http://localhost:9000")
+		@CrossOrigin(origins = "http://localhost:8000")
 	    @GetMapping("beers/random")
 	    public Beer getRandom() {
 	        System.out.println("==== in Beer ====");
 	        Beer beer = repository.findBeer();
 	        return beer;
 	    }
-
+		
 	
 }
