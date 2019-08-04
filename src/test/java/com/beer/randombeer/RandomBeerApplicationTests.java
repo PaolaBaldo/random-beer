@@ -34,9 +34,6 @@ public class RandomBeerApplicationTests {
 	        RequestEntity.get(uri("/beers/random")).header(HttpHeaders.ORIGIN, "http://localhost:8000").build(),
 	        Beer.class);
 	    assertEquals(HttpStatus.OK, entity.getStatusCode());
-	    //assertEquals("http://localhost:8000", entity.getHeaders().getAccessControlAllowOrigin());
-	    //Beer beer = entity.getBody();
-	    //assertEquals("Hello, World!", beer.getName());
 	  }
 	  
 	  private URI uri(String path) {

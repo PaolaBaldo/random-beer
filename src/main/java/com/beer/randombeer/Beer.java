@@ -18,9 +18,6 @@ public class Beer {
 	private String breweryLocation;
 	
 	
-	
-	
-	
 	public Beer() {
 	}
 
