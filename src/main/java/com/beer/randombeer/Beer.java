@@ -1,14 +1,18 @@
 package com.beer.randombeer;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Beer {
 	
 	private @Id @GeneratedValue Long id;
 	private String name;
+	@Lob
+	@Column(name = "DESCRIPTION")
 	private String description;
 	private double abv;
 	private String breweryLocation;
