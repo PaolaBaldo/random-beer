@@ -23,28 +23,6 @@ public class BeerController {
 	}
 	
 	
-		/*@GetMapping("/beers/{id}")
-		Resource<Beer> one(@PathVariable Long id) {
-			
-			Beer beer = repository.findById(id)
-				.orElseThrow(() -> new BeerNotFoundException(id));
-			
-			return new Resource<>(beer,
-				linkTo(methodOn(BeerController.class).one(id)).withSelfRel());
-				//linkTo(methodOn(BeerController.class).all()).withRel("beers"));
-		}*/
-		
-		
-		/*@GetMapping("/beers/random")
-		Resource<Beer> getRandom() {
-			
-			Beer beer = repository.findBeer();
-				
-			
-			return new Resource<>(beer,
-				linkTo(methodOn(BeerController.class).getRandom()).withSelfRel());
-				//linkTo(methodOn(BeerController.class).all()).withRel("beers"));
-		}*/
 		
 		@CrossOrigin(origins = "http://localhost:8000")
 	    @GetMapping("beers/random")
