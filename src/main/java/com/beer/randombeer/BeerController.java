@@ -22,8 +22,8 @@ public class BeerController {
 		this.repository = repository;
 	}
 	
-	// tag::get-single-item[]
-		@GetMapping("/beers/{id}")
+	
+		/*@GetMapping("/beers/{id}")
 		Resource<Beer> one(@PathVariable Long id) {
 			
 			Beer beer = repository.findById(id)
@@ -32,8 +32,8 @@ public class BeerController {
 			return new Resource<>(beer,
 				linkTo(methodOn(BeerController.class).one(id)).withSelfRel());
 				//linkTo(methodOn(BeerController.class).all()).withRel("beers"));
-		}
-		// end::0get-single-item[]
+		}*/
+		
 		
 		/*@GetMapping("/beers/random")
 		Resource<Beer> getRandom() {
@@ -49,9 +49,14 @@ public class BeerController {
 		@CrossOrigin(origins = "http://localhost:8000")
 	    @GetMapping("beers/random")
 	    public Beer getRandom() {
-	        System.out.println("==== in Beer ====");
-	        Beer beer = repository.findBeer();
-	        return beer;
+			try {
+				Beer beer = repository.findRandomBeer();
+		        return beer;
+				
+			}catch(BeerNotFoundException e) {
+				e.getMessage();
+			}
+			return null;
 	    }
 		
 	
